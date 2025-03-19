@@ -1,9 +1,13 @@
+```tsx
+// After Evidence
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./components/ui/Button";
 import SignupForm from "./components/SignupForm";
 import { Container } from "./components/ui/container";
-import AiIllustration from "../public/photos/AI-Illustration.jpg";
+import { SocialProof } from './components/SocialProof';
+import { ValueTimeline } from './components/ValueTimeline';
+import { CallToAction } from './components/CallToAction';
 
 export default function Page() {
   return (
@@ -20,7 +24,7 @@ export default function Page() {
               increase revenue, and eliminate inefficiencies.
             </p>
             <div className="flex gap-4">
-              <Button variant="default" 
+              <Button asChild variant="default" size="lg" 
                 className="bg-violet-600 hover:bg-violet-700 text-white border border-violet-400/20 shadow-lg shadow-violet-500/20">
                 <Link href="/contact">Book a Free Strategy Call</Link>
               </Button>
@@ -28,16 +32,18 @@ export default function Page() {
           </div>
           <div className="flex-1">
             <Image
-              src={AiIllustration}
+              src="/hero-image.png"
               alt="AI Solutions Illustration"
               width={600}
-              height={300}
-              className="rounded-lg border object-cover border-violet-500/20 shadow-xl shadow-violet-500/10"
+              height={400}
+              className="rounded-lg border border-violet-500/20 shadow-xl shadow-violet-500/10"
               priority
             />
           </div>
         </Container>
       </section>
+
+      <SocialProof />
 
       {/* Problems We Solve Section */}
       <section className="py-16 bg-gradient-to-r from-slate-900 via-slate-950 to-slate-900">
@@ -68,6 +74,8 @@ export default function Page() {
         </Container>
       </section>
 
+      <ValueTimeline />
+
       {/* Quick Solutions Preview */}
       <section className="py-16">
         <Container>
@@ -83,6 +91,8 @@ export default function Page() {
           </div>
         </Container>
       </section>
+
+      <CallToAction />
 
       {/* Early Access Signup Section */}
       <section className="py-16 bg-gradient-to-r from-slate-950 via-violet-950/20 to-slate-950">
@@ -124,3 +134,4 @@ const solutions = [
     icon: "⚡"
   }
 ];
+```

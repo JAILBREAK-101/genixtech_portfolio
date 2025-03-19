@@ -18,6 +18,8 @@
   --sh-jsxliterals: #6266d1;
   --sh-property: #e25a1c;
   --sh-entity: #e25a1c;
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
 }
 
 /* Dark theme colors */
@@ -32,6 +34,11 @@
   --sh-jsxliterals: #6266d1;
   --sh-property: #e25a1c;
   --sh-entity: #e25a1c;
+}
+
+[data-theme="dark"] {
+  --background: 222.2 84% 4.9%;
+  --foreground: 0 0% 100%;
 }
 
 html {
@@ -148,4 +155,8 @@ table {
 
 .title {
   text-wrap: balance;
+}
+
+body {
+  @apply transition-colors duration-200;
 }

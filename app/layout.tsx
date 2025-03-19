@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   },
 };
 
-const cx = (...classes) => classes.filter(Boolean).join(" ");
+export const cx = (...classes) => classes.filter(Boolean).join(" ");
 
 export default function RootLayout({
   children,
@@ -53,7 +53,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={cx(GeistSans.variable, GeistMono.variable)}>
+    <html lang="en" className={cx(GeistSans.variable, GeistMono.variable)} suppressHydrationWarning>
       <head>
         <link
           rel="alternate"
@@ -74,20 +74,32 @@ export default function RootLayout({
           title="JSON Feed"
         />
       </head>
-      <body className="antialiased flex flex-col items-center justify-center mx-auto mt-2 lg:mt-8 mb-20 lg:mb-40">
+      <body className="antialiased min-h-screen bg-slate-950">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <main className="flex-auto min-w-0 mt-2 md:mt-6 flex flex-col px-6 sm:px-4 md:px-0 max-w-[630px] w-full">
-            <Navbar />
-            {children}
-            <Footer />
-            <Analytics />
-            <SpeedInsights />
-          </main>
+          <div className="flex flex-col min-h-screen">
+            <header className="sticky top-0 z-50 w-full border-b border-violet-500/10 backdrop-blur-sm">
+              <div className="container mx-auto px-4 lg:px-8">
+                <Navbar />
+              </div>
+            </header>
+            
+            <main className="flex-grow w-full">
+              {children}
+            </main>
+
+            <footer className="border-t border-violet-500/10">
+              <div className="container mx-auto px-4 lg:px-8">
+                <Footer />
+              </div>
+            </footer>
+          </div>
+          <Analytics />
+          <SpeedInsights />
         </ThemeProvider>
       </body>
     </html>
