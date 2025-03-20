@@ -3,57 +3,7 @@ import type { Metadata } from "next";
 import { Container } from "../components/ui/container";
 import { Button } from "../components/ui/Button";
 
-// const solutionCategories = [
-//   {
-//     title: "AI Content Creation",
-//     solutions: [
-//       {
-//         name: "Subtilo",
-//         description: "AI-powered video transcription & subtitles",
-//         features: [
-//           "99% accuracy in 100+ languages",
-//           "Real-time translation",
-//           "Custom voice cloning",
-//         ],
-//         status: "live",
-//         metrics: "Processing 10,000+ minutes daily"
-//       }
-//     ]
-//   },
-//   {
-//     title: "Business Automation",
-//     solutions: [
-//       {
-//         name: "AI Chatbots",
-//         description: "24/7 customer support automation",
-//         features: [
-//           "Natural language understanding",
-//           "Multi-platform integration",
-//           "Custom knowledge base",
-//         ],
-//         status: "beta",
-//         metrics: "Handling 5,000+ queries daily"
-//       }
-//     ]
-//   },
-//   {
-//     title: "Workflow Optimization",
-//     solutions: [
-//       {
-//         name: "Process Automation",
-//         description: "Custom AI workflows",
-//         features: [
-//           "80% reduction in manual tasks",
-//           "Cross-platform integration",
-//           "Real-time analytics",
-//         ],
-//         status: "development",
-//         timeline: "Launch: Q2 2024"
-//       }
-//     ]
-//   }
-// ];
-
+// Sync with Homepage Solutions Section
 // Learning tracks to show progression
 const learningTracks = [
   {
@@ -66,16 +16,16 @@ const learningTracks = [
   {
     area: "AI Integration",
     status: "learning",
-    skills: ["OpenAI API", "LangChain", "Vector Databases"],
-    currentProject: "Subtilo AI integration",
-    progress: 40
+    skills: ["TensorFlow", "HF Transformers"],
+    currentProject: "Working on Subtilo",
+    progress: 15
   },
   {
     area: "Backend Development",
     status: "active",
-    skills: ["Node.js", "PostgreSQL", "Prisma"],
-    currentProject: "API development for AI applications",
-    progress: 25
+    skills: ["Node.js", "Express.js", "Python", "Flask", "MongoDB", "PostgreSQL", "Prisma"],
+    currentProject: "Building ResumeGPT",
+    progress: 50
   }
 ];
 
