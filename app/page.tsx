@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./components/ui/Button";
-import SignupForm from "./components/SignupForm";
+// import SignupForm from "./components/SignupForm";
 import { Container } from "./components/ui/container";
 import AiIllustration from "../public/photos/AI-Illustration.jpg";
 
@@ -12,17 +12,19 @@ export default function Page() {
       <section className="py-20 bg-gradient-to-b from-slate-950 to-slate-900">
         <Container className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="flex-1 space-y-8">
-            <h1 className="text-5xl font-bold bg-gradient-to-r from-violet-400 via-fuchsia-500 to-cyan-400 bg-clip-text text-transparent animate-pulse">
-              AI-Powered Solutions to Scale Your Business Effortlessly
+            <h1 className="text-5xl font-bold bg-gradient-to-r from-violet-400 via-fuchsia-500 to-cyan-400 bg-clip-text text-transparent">
+              Building AI-Enhanced Web Solutions
             </h1>
             <p className="text-lg text-violet-200">
-              I build AI-driven automation tools that optimize workflows, 
-              increase revenue, and eliminate inefficiencies.
+              I'm a developer focused on creating custom web applications 
+              with AI integrations. Currently building and learning.
             </p>
             <div className="flex gap-4">
-              <Button variant="default" 
-                className="bg-violet-600 hover:bg-violet-700 text-white border border-violet-400/20 shadow-lg shadow-violet-500/20">
-                <Link href="/contact">Book a Free Strategy Call</Link>
+              <Button variant="default">
+                <Link href="/solutions">View My Work</Link>
+              </Button>
+              <Button variant="cta">
+                <Link href="/contact">Let's Talk</Link>
               </Button>
             </div>
           </div>
@@ -47,20 +49,20 @@ export default function Page() {
               Transform Your Business Operations
             </h2>
             <div className="grid md:grid-cols-2 gap-8 mt-12">
-              <div className="p-6 bg-slate-900/50 backdrop-blur-sm rounded-lg border border-red-500/20 shadow-lg shadow-red-500/10">
-                <h3 className="text-xl font-medium text-red-400 mb-4">❌ Current Challenges</h3>
+              <div className="p-6 bg-slate-900/50 backdrop-blur-sm rounded-lg border border-violet-500/20">
+                <h3 className="text-xl font-medium text-violet-400 mb-4">What I Can Help With</h3>
                 <ul className="text-gray-300 space-y-2 text-left">
-                  <li>• 40% of work hours lost to manual data entry</li>
-                  <li>• Scattered communication across multiple platforms</li>
-                  <li>• Inconsistent customer response times</li>
+                  <li>• Custom web application development</li>
+                  <li>• Integration of AI APIs (OpenAI, HuggingFace)</li>
+                  <li>• Modern React/Next.js solutions</li>
                 </ul>
               </div>
-              <div className="p-6 bg-slate-900/50 backdrop-blur-sm rounded-lg border border-emerald-500/20 shadow-lg shadow-emerald-500/10">
-                <h3 className="text-xl font-medium text-emerald-400 mb-4">✅ Our Impact</h3>
+              <div className="p-6 bg-slate-900/50 backdrop-blur-sm rounded-lg border border-violet-500/20">
+                <h3 className="text-xl font-medium text-violet-400 mb-4">Current Focus</h3>
                 <ul className="text-gray-300 space-y-2 text-left">
-                  <li>• Automate 80% of repetitive tasks</li>
-                  <li>• Unified AI-powered workspace</li>
-                  <li>• 24/7 intelligent customer support</li>
+                  <li>• Building my first AI-integrated projects</li>
+                  <li>• Learning and implementing best practices</li>
+                  <li>• Open to collaboration opportunities</li>
                 </ul>
               </div>
             </div>
@@ -84,21 +86,24 @@ export default function Page() {
         </Container>
       </section>
 
-      {/* Early Access Signup Section */}
       <section className="py-16 bg-gradient-to-r from-slate-950 via-violet-950/20 to-slate-950">
         <Container className="max-w-4xl">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
-              Get Exclusive Early Access to the Future of AI
+          <div className="text-center space-y-6">
+            <h2 className="text-3xl font-bold text-violet-300">
+              Let's Build Something Together
             </h2>
-            <p className="text-lg text-gray-700 dark:text-gray-300">
-              Join a select group of pioneers shaping the next wave of AI-powered tools.  
-              Gain priority access, influence development, and experience innovation before anyone else.
+            <p className="text-lg text-gray-300">
+              I'm currently available for small to medium web development projects.
+              While I'm growing my AI integration skills, I can help with:
             </p>
-            <SignupForm />
-            <p className="text-sm text-gray-500 dark:text-gray-400">
-              🚀 Only limited spots available for early adopters.
-            </p>
+            <ul className="text-left max-w-md mx-auto space-y-2 text-gray-300">
+              <li>• Custom web applications</li>
+              <li>• React/Next.js development</li>
+              <li>• Basic AI API integrations</li>
+            </ul>
+            <Button variant="cta">
+              <Link href="/contact">Discuss Your Project</Link>
+            </Button>
           </div>
         </Container>
       </section>
@@ -109,18 +114,21 @@ export default function Page() {
 
 const solutions = [
   {
-    title: "Subtilo",
-    description: "AI-powered video transcription & subtitles with 99% accuracy in 100+ languages",
-    icon: "🎥"
+    title: "In Development",
+    description: "Working on my first AI-integrated application - Coming Soon",
+    icon: "🚀",
+    status: "development"
   },
   {
-    title: "AI Chatbots",
-    description: "24/7 customer support automation with natural language understanding",
-    icon: "🤖"
+    title: "Learning Path",
+    description: "Currently focusing on AI API integration and web development",
+    icon: "📚",
+    status: "ongoing"
   },
   {
-    title: "Workflow Automation",
-    description: "Custom AI workflows that reduce manual tasks by 80%",
-    icon: "⚡"
+    title: "Open to Projects",
+    description: "Available for collaborative development opportunities",
+    icon: "🤝",
+    status: "available"
   }
 ];
