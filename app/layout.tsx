@@ -45,13 +45,15 @@ export const metadata: Metadata = {
   },
 };
 
-export const cx = (...classes) => classes.filter(Boolean).join(" ");
+export const cx = (...classes: string[]) => classes.filter(Boolean).join(" ");
+
+interface RootLayoutProps {
+  children: React.ReactNode;
+}
 
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode;
-}) {
+}: RootLayoutProps): React.JSX.Element {
   return (
     <html lang="en" className={cx(GeistSans.variable, GeistMono.variable)} suppressHydrationWarning>
       <head>
