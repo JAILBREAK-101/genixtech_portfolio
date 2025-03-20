@@ -1,5 +1,4 @@
-import { cx } from "app/layout";
-import { JSX } from "react/jsx-runtime";
+import { cn } from "app/utils";
 
 interface ContainerProps extends Omit<React.HTMLProps<HTMLDivElement>, 'as'> {
   as?: 'div' | 'section' | 'article' | 'main' | 'header' | 'footer' | 'aside' | 'nav';
@@ -15,7 +14,7 @@ export function Container({
 }: ContainerProps) {
   return (
     <Component
-      className={cx(
+      className={cn(
         "container mx-auto px-4 lg:px-8",
         className
       )}

@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   },
 };
 
-export const cx = (...classes: string[]) => classes.filter(Boolean).join(" ");
+const cx = (...classes: string[]) => classes.filter(Boolean).join(" ");
 
 interface RootLayoutProps {
   children: React.ReactNode;
