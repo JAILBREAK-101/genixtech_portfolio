@@ -8,6 +8,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import Footer from "./components/footer";
 import { ThemeProvider } from "./components/theme-switch";
 import { metaData } from "./config";
+import { ToastContainer } from 'react-toastify';
 
 export const metadata: Metadata = {
   metadataBase: new URL(metaData.baseUrl),
@@ -100,6 +101,23 @@ export default function RootLayout({
               </div>
             </footer>
           </div>
+          <ToastContainer
+            position="bottom-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="dark"
+            toastStyle={{
+              background: 'rgb(15 23 42)',
+              border: '1px solid rgba(139, 92, 246, 0.1)',
+              color: '#e2e8f0'
+            }}
+          />
           <Analytics />
           <SpeedInsights />
         </ThemeProvider>

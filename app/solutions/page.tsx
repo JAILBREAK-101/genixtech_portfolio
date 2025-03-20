@@ -67,12 +67,12 @@ const learningTracks = [
     area: "AI Integration",
     status: "learning",
     skills: ["OpenAI API", "LangChain", "Vector Databases"],
-    currentProject: "Chat interface with RAG implementation",
+    currentProject: "Subtilo AI integration",
     progress: 40
   },
   {
     area: "Backend Development",
-    status: "planned",
+    status: "active",
     skills: ["Node.js", "PostgreSQL", "Prisma"],
     currentProject: "API development for AI applications",
     progress: 25
@@ -84,24 +84,24 @@ const projects = [
   {
     name: "Portfolio Site",
     status: "in-progress",
-    description: "My personal portfolio built with Next.js and Tailwind",
+    description: "My value-driven portfolio built with Next.js and Tailwind",
     features: [
       "Responsive design",
       "Dark/Light mode",
       "Performance optimized"
     ],
-    github: "https://github.com/yourusername/portfolio"
+    github: "https://github.com/JAILBREAK-101/genixtechportolio"
   },
   {
-    name: "AI Chat Interface",
+    name: "ResumeGPT",
     status: "development",
-    description: "Experimenting with OpenAI API integration",
+    description: "Experimenting with OpenAI API integration to build an AI-powered resume parser that extracts key information from resumes (PDF/DOCX) and structures it into JSON format.",
     features: [
-      "Basic chat functionality",
-      "Context management",
+      "Upload resumes (PDF/DOCX)",
+      "Multiple export formats",
       "Work in progress"
     ],
-    github: "https://github.com/yourusername/ai-chat"
+    github: "https://github.com/JAILBREAK-101/ResumeGPT"
   }
 ];
 

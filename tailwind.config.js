@@ -33,6 +33,23 @@ module.exports = {
           '2xl': '1536px',
         },
       },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        slideUp: {
+          '0%': { transform: 'translateY(20px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+      },
+      animation: {
+        fadeIn: 'fadeIn 0.3s ease-out',
+        slideUp: 'slideUp 0.4s ease-out',
+      },
+      backgroundImage: {
+        'grid-violet-900': 'linear-gradient(to right, rgb(76, 29, 149) 1px, transparent 1px), linear-gradient(to bottom, rgb(76, 29, 149) 1px, transparent 1px)',
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],
