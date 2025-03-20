@@ -50,6 +50,14 @@ module.exports = {
       backgroundImage: {
         'grid-violet-900': 'linear-gradient(to right, rgb(76, 29, 149) 1px, transparent 1px), linear-gradient(to bottom, rgb(76, 29, 149) 1px, transparent 1px)',
       },
+      spacing: {
+        'safe-top': 'env(safe-area-inset-top)',
+        'safe-bottom': 'env(safe-area-inset-bottom)',
+      },
+      screens: {
+        'xs': '375px',
+        // ...existing breakpoints
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],

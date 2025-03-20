@@ -12,56 +12,62 @@ export default function Page() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
+    <>
     <main className="mx-auto px-4 bg-slate-950 text-violet-50 min-h-screen">
       <ContactModal 
         isOpen={isModalOpen} 
         onClose={() => setIsModalOpen(false)} 
       />
       
-      <section className="py-20 bg-gradient-to-b from-slate-950 to-slate-900">
-        <Container className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="flex-1 space-y-8">
-            <h1 className="text-5xl font-bold bg-gradient-to-r from-violet-400 via-fuchsia-500 to-cyan-400 bg-clip-text text-transparent">
+      <section className="py-12 md:py-20 bg-gradient-to-b from-slate-950 to-slate-900">
+        <Container className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="flex-1 space-y-6 md:space-y-8 text-center lg:text-left">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-violet-400 via-fuchsia-500 to-cyan-400 bg-clip-text text-transparent">
               Building AI-Enhanced Web Solutions
             </h1>
-            <p className="text-lg text-violet-200">
+            <p className="text-base md:text-lg text-violet-200 max-w-2xl mx-auto lg:mx-0">
               I'm a developer focused on creating custom web applications 
               with AI integrations. Currently building and learning.
             </p>
-            <div className="flex gap-4">
-              <Button variant="default">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <Button variant="default" className="w-full sm:w-auto">
                 <Link href="/solutions">View My Work</Link>
               </Button>
               <Button 
                 variant="cta"
                 onClick={() => setIsModalOpen(true)}
+                className="w-full sm:w-auto"
               >
                 Let's Talk
               </Button>
             </div>
           </div>
-          <div className="flex-1">
-            <Image
-              src={GenixTech}
-              alt="AI Solutions Illustration"
-              width={600}
-              height={300}
-              className="rounded-lg border object-cover border-violet-500/20 shadow-xl shadow-violet-500/10"
-              priority
-            />
+          <div className="flex-1 mt-8 lg:mt-0">
+            <div className="relative mx-auto max-w-md lg:max-w-none">
+              <Image
+                src={GenixTech}
+                alt="AI Solutions Illustration"
+                width={600}
+                height={300}
+                className="rounded-lg border object-cover border-violet-500/20 shadow-xl shadow-violet-500/10"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent lg:hidden" />
+            </div>
           </div>
         </Container>
       </section>
 
       {/* Problems We Solve Section */}
-      <section className="py-16 bg-gradient-to-r from-slate-900 via-slate-950 to-slate-900">
+      <section className="py-12 md:py-16 bg-gradient-to-r from-slate-900 via-slate-950 to-slate-900">
         <Container className="space-y-8">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <h2 className="text-3xl font-semibold text-violet-300">
+          <div className="max-w-4xl mx-auto text-center space-y-6 md:space-y-8 px-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-violet-300">
               Transform Your Business Operations
             </h2>
-            <div className="grid md:grid-cols-2 gap-8 mt-12">
-              <div className="p-6 bg-slate-900/50 backdrop-blur-sm rounded-lg border border-violet-500/20">
+            <div className="grid sm:grid-cols-2 gap-6 md:gap-8 mt-8 md:mt-12">
+              {/* Service cards with improved mobile layout */}
+              <div className="p-4 md:p-6 bg-slate-900/50 backdrop-blur-sm rounded-lg border border-violet-500/20">
                 <h3 className="text-xl font-medium text-violet-400 mb-4">What I Can Help With</h3>
                 <ul className="text-gray-300 space-y-2 text-left">
                   <li>• Custom web application development</li>
@@ -83,15 +89,121 @@ export default function Page() {
       </section>
 
       {/* Quick Solutions Preview */}
-      <section className="py-16">
-        <Container>
-          <h2 className="text-3xl font-semibold text-center mb-12 text-violet-300">My Solutions</h2>
-          <div className="grid md:grid-cols-3 gap-8">
+      <section className="py-12 md:py-16">
+        <Container className="px-4">
+          <h2 className="text-2xl md:text-3xl font-semibold text-center mb-8 md:mb-12 text-violet-300">
+            My Solutions
+          </h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {solutions.map((solution) => (
-              <div key={solution.title} 
-                className="p-6 bg-gradient-to-br from-slate-900 to-slate-950 rounded-lg border border-violet-500/20 shadow-lg shadow-violet-500/10 hover:shadow-violet-500/20 hover:border-violet-500/30 transition-all duration-300">
-                <h3 className="text-xl font-medium mb-4 text-violet-400">{solution.title}</h3>
-                <p className="text-gray-300">{solution.description}</p>
+              <div 
+                key={solution.title} 
+                className="group p-6 bg-gradient-to-br from-slate-900 to-slate-950 rounded-xl border border-violet-500/20 shadow-lg shadow-violet-500/10 hover:shadow-violet-500/20 hover:border-violet-500/30 transition-all duration-300"
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-3">
+                    <span className="text-2xl">{solution.icon}</span>
+                    <h3 className="text-xl font-semibold text-violet-300">
+                      {solution.title}
+                    </h3>
+                  </div>
+                  <span className={`
+                    px-2 py-1 text-xs rounded-full capitalize
+                    ${solution.status === 'active' ? 'bg-emerald-500/20 text-emerald-400' :
+                      solution.status === 'in-progress' ? 'bg-blue-500/20 text-blue-400' :
+                      'bg-violet-500/20 text-violet-400'}
+                  `}>
+                    {solution.status}
+                  </span>
+                </div>
+
+                <p className="text-gray-300 mb-4">
+                  {solution.description}
+                </p>
+
+                {/* Timeline */}
+                <div className="flex items-center gap-2 text-sm text-gray-400 mb-4">
+                  <svg 
+                    className="w-4 h-4" 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke="currentColor"
+                  >
+                    <path 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      strokeWidth={2} 
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" 
+                    />
+                  </svg>
+                  <span>{solution.timeline}</span>
+                </div>
+
+                {/* Progress bar for in-progress projects */}
+                {solution.progress > 0 && (
+                  <div className="mb-4">
+                    <div className="flex justify-between text-sm text-gray-400 mb-1">
+                      <span>Progress</span>
+                      <span>{solution.progress}%</span>
+                    </div>
+                    <div className="h-2 bg-slate-700 rounded-full overflow-hidden">
+                      <div 
+                        className="h-full bg-violet-500 rounded-full transition-all duration-500"
+                        style={{ width: `${solution.progress}%` }}
+                      />
+                    </div>
+                  </div>
+                )}
+
+                {/* Tech stack */}
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {solution.stack.map((tech) => (
+                    <span 
+                      key={tech}
+                      className="px-2 py-1 text-xs bg-violet-500/10 text-violet-300 rounded"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Key features */}
+                <ul className="space-y-2 mb-4">
+                  {solution.features.map((feature) => (
+                    <li 
+                      key={feature}
+                      className="flex items-start gap-2 text-sm text-gray-300"
+                    >
+                      <span className="text-violet-400 mt-1">▹</span>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Action buttons */}
+                <div className="flex gap-3 mt-6">
+                  {solution.githubUrl ? (
+                    <Link 
+                      href={solution.githubUrl}
+                      className="text-sm text-violet-400 hover:text-violet-300 transition-colors flex items-center gap-1"
+                      target="_blank"
+                    >
+                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path fillRule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.647.35-1.087.636-1.337-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.137 20.167 22 16.42 22 12c0-5.523-4.477-10-10-10z" clipRule="evenodd" />
+                      </svg>
+                      View Code
+                    </Link>
+                  ) : (
+                    solution.comingSoon && (
+                      <span className="text-sm text-gray-400 flex items-center gap-1">
+                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Coming Soon
+                      </span>
+                    )
+                  )}
+                </div>
               </div>
             ))}
           </div>
@@ -289,28 +401,55 @@ export default function Page() {
           </div>
         </Container>
       </section>
-
     </main>
+    </>
   );
 }
 
+// Always Sync with the Solutions Page Details
 const solutions = [
   {
-    title: "In Development",
-    description: "Working on my first AI-integrated application - Coming Soon",
-    icon: "🚀",
-    status: "development"
+    title: "ResumeGPT",
+    status: "development",
+    icon: "🤖",
+    description: "Experimenting with OpenAI API integration to build an AI-powered resume parser that extracts key information from resumes (PDF/DOCX) and structures it into JSON format.",
+    features: [
+      "Upload resumes (PDF/DOCX)",
+      "Multiple export formats",
+      "Work in progress"
+    ],
+    timeline: "March 2025",
+    stack: ["Next.js", "OpenAI", "Tailwind", "Node.Js", "Express", "MongoDB"],
+    progress: 50,
+    githubUrl: "https://github.com/JAILBREAK-101/ResumeGPT"
   },
   {
-    title: "Learning Path",
-    description: "Currently focusing on AI API integration and web development",
-    icon: "📚",
-    status: "ongoing"
+    title: "This Portfolio",
+    description: "My personal portfolio built with Next.js and Tailwind",
+    icon: "🎨",
+    status: "active",
+    timeline: "March 2025",
+    stack: ["Next.js", "TypeScript", "Tailwind"],
+    features: [
+      "Responsive design",
+      "Dark/Light mode",
+      "Performance optimized"
+    ],
+    progress: 80,
+    githubUrl: "https://github.com/JAILBREAK-101/genixtechportolio"
   },
   {
-    title: "Open to Projects",
-    description: "Available for collaborative development opportunities",
-    icon: "🤝",
-    status: "available"
+    title: "Subtilo",
+    description: "AI-powered video subtitles application",
+    icon: "📊",
+    status: "development",
+    timeline: "Q3 2025",
+    stack: ["Next.js", "Python", "TensorFlow"],
+    features: [
+      "Real-time translation",
+      "Subtitle Generation"
+    ],
+    progress: 15,
+    comingSoon: true
   }
 ];
