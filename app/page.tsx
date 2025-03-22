@@ -7,6 +7,7 @@ import { Button } from "./components/ui/Button";
 import { Container } from "./components/ui/container";
 import GenixTech from "../public/photos/GenixTech.png";
 import { ContactModal } from './components/ContactModal';
+import { Calendar } from 'lucide-react';
 
 export default function Page() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -194,13 +195,23 @@ export default function Page() {
                       View Code
                     </Link>
                   ) : (
-                    solution.comingSoon && (
-                      <span className="text-sm text-gray-400 flex items-center gap-1">
-                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        Coming Soon
-                      </span>
+                    solution.comingSoon && solution.waitlistUrl && (
+                      <div className='flex gap-5 mt-4'>
+                        <span className="text-sm text-gray-400 flex items-center gap-1">
+                          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          Coming Soon
+                        </span>
+                        <Link
+                          href={solution.waitlistUrl}
+                          className='text-sm text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-1'
+                          target="_blank"
+                        >
+                          <Calendar />
+                          Join the Waitlist
+                        </Link>
+                      </div>
                     )
                   )}
                 </div>
@@ -450,6 +461,7 @@ const solutions = [
       "Subtitle Generation"
     ],
     progress: 15,
-    comingSoon: true
+    comingSoon: true,
+    waitlistUrl: "https://subtiloai.vercel.app"
   }
 ];
