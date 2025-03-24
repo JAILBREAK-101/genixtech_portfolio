@@ -7,7 +7,6 @@ const RESPONSE_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_RESPONS
 
 export const sendContactEmails = async (data: Record<string, unknown>) => {
   try {
-    // Send inquiry notification
     await emailjs.send(
       SERVICE_ID,
       INQUIRY_TEMPLATE_ID,
@@ -15,7 +14,6 @@ export const sendContactEmails = async (data: Record<string, unknown>) => {
       USER_ID
     );
 
-    // Send auto-response
     await emailjs.send(
       SERVICE_ID,
       RESPONSE_TEMPLATE_ID,
