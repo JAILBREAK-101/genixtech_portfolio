@@ -232,7 +232,7 @@ export default function Page() {
             {/* Section Header */}
             <div className="text-center space-y-4 mb-16">
               <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-violet-400 via-fuchsia-500 to-cyan-400 bg-clip-text text-transparent">
-                What I Build
+                The Value I Offer
               </h2>
               <p className="text-lg text-violet-200/80">
                 Focused on modern web solutions with AI capabilities
@@ -267,7 +267,7 @@ export default function Page() {
                 <ul className="space-y-4">
                   {[
                     "Custom web application development",
-                    "Integration of AI APIs (OpenAI, HuggingFace)",
+                    "Integration of AI APIs/Models (OpenAI, HuggingFace)",
                     "Modern React/Next.js solutions"
                   ].map((service) => (
                     <li 
@@ -351,8 +351,8 @@ export default function Page() {
                 <ul className="inline-block space-y-4 text-left">
                   {[
                     "Custom web applications",
-                    "React/Next.js development",
-                    "Basic AI API integrations"
+                    "Fullstack development",
+                    "AI API integrations"
                   ].map((service) => (
                     <li 
                       key={service}
@@ -455,7 +455,7 @@ const solutions = [
     icon: "📊",
     status: "development",
     timeline: "Q3 2025",
-    stack: ["Next.js", "Python", "TensorFlow"],
+    stack: ["Next.js", "Python(Flask)", "TensorFlow"],
     features: [
       "Real-time translation",
       "Subtitle Generation"
