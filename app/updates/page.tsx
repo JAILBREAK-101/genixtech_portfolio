@@ -10,26 +10,32 @@ export const metadata: Metadata = {
 
 const updates = [
   {
-    category: "Current Learning",
+    category: "Content Creation",
     items: [
       {
-        title: "AI Integration Fundamentals",
-        date: "March 2024",
-        type: "study",
-        description: "Deep diving into OpenAI API integration and RAG implementations",
+        title: "JavaScript Fundamentals",
+        date: "February 2025",
+        type: "youtube",
+        description: "Deep diving into JavaScript Fundamentals till Breakthrough Projects",
         links: [
           {
-            text: "Study Notes",
-            url: "/blog/ai-integration-notes"
+            text: "Video Series",
+            url: "https://www.youtube.com/watch?v=hQiyLMwqCqg&list=PL3EZbNoASMkk-TeY3FcX7keeKI1En-gck"
           }
         ],
-        tags: ["OpenAI", "RAG", "Vector DB"]
+        tags: ["GenixJS", "JavaScript", "FrontendDevelopment"]
       },
       {
-        title: "Next.js Advanced Patterns",
-        date: "February 2024",
-        type: "study",
-        description: "Exploring server components, streaming, and edge runtime",
+        title: "Next.js Server Actions",
+        date: "March 2025",
+        type: "article",
+        description: "An Article on 'Understanding and Fixing the “Body Exceeded 1MB Limit” Error in Next.js Server Actions'",
+        links: [
+          {
+            text: "Medium Article",
+            url: "https://medium.com/@oluwagbemiga.awosope123/understanding-and-fixing-the-body-exceeded-1mb-limit-error-in-next-js-server-actions-f5c31fc16b37"
+          }
+        ],
         tags: ["Next.js", "React", "Performance"]
       }
     ]
@@ -42,25 +48,25 @@ const updates = [
         date: "Ongoing",
         type: "project",
         description: "Building and iterating on my personal portfolio site",
-        progress: 75,
+        progress: 80,
         milestones: [
           "✓ Core pages structure",
           "✓ Responsive design",
           "→ AI integration features",
-          "→ Blog section"
+          "→ Blog Section"
         ]
       }
     ]
   },
   {
-    category: "Upcoming Plans",
+    category: "Ongoing Plans",
     items: [
       {
-        title: "AI Chat Implementation",
-        date: "Q2 2024",
-        type: "planned",
-        description: "Building a context-aware chat interface with RAG",
-        tags: ["OpenAI", "Next.js", "TypeScript"]
+        title: "Subtilo",
+        date: "Q3 2025",
+        type: "ongoing",
+        description: "AI-powered video subtitles application",
+        tags: ["Next.js", "Python(Flask)", "TensorFlow"]
       }
     ]
   }
@@ -107,6 +113,7 @@ export default function UpdatesPage() {
                           px-2 py-1 text-xs rounded-full
                           ${item.type === 'study' ? 'bg-blue-500/20 text-blue-400' :
                             item.type === 'project' ? 'bg-emerald-500/20 text-emerald-400' :
+                            item.type === 'youtube' ? 'bg-red-500/20 text-red-400' :
                             'bg-violet-500/20 text-violet-400'}
                         `}>
                           {item.type}
