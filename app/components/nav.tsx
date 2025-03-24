@@ -10,11 +10,6 @@ const navItems = {
     name: "Solutions",
     description: "AI-powered tools and services"
   },
-  "https://thoughtsphere.vercel.app": {
-    name: "ThoughtSphere",
-    description: "AI Research Blog",
-    external: true
-  },
   "/updates": {
     name: "Updates",
     description: "Latest developments and content"
@@ -34,7 +29,6 @@ export function Navbar() {
           {metaData.title}
         </Link>
 
-        {/* Mobile Menu Button */}
         <button
           className="md:hidden p-2 text-gray-400 hover:text-gray-200"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -42,7 +36,6 @@ export function Navbar() {
           <Menu size={24} />
         </button>
 
-        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-6">
           {Object.entries(navItems).map(([path, { name }]) => (
             <Link
@@ -57,7 +50,6 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
       {isMenuOpen && (
         <div className="md:hidden mt-4 py-4 border-t border-violet-500/10">
           <div className="flex flex-col space-y-4">
@@ -80,11 +72,3 @@ export function Navbar() {
     </nav>
   );
 }
-
-/*
-Create the necessary components (e.g., YouTubeEmbed)
-Add proper metadata for SEO
-Implement error boundaries
-Add loading states
-Consider adding RSS feeds for updates
-*/
