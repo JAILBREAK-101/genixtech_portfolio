@@ -1,43 +1,28 @@
-# Nextfolio
+# GenixTech Portfolio
 
-A clean, fast, and lightweight portfolio template built with [Next.js](https://nextjs.org/), [Vercel](https://vercel.com/), and [Tailwind CSS](https://tailwindcss.com/).
+## Overview
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2F1msirius%2FNextfolio)
-
-## Technologies Used
-
-- Framework: [Next.js](https://nextjs.org/)
-- Typography: [Vercel Geist Font](https://vercel.com/font)
-- Styling: [Tailwind CSS](https://tailwindcss.com/)
-- Analytics: [Vercel Web Analytics](https://vercel.com/docs/speed-insights) and [Speed Insights](https://vercel.com/docs/speed-insights)
-- Deployment: [Vercel](https://vercel.com/)
+Welcome to the GenixTech Portfolio! This is a value-driven portfolio built with Next.js and Tailwind CSS. The portfolio is designed to showcase your projects and skills in a modern, responsive, and performance-optimized manner.
 
 ## Features
 
-- **[MDX](https://mdxjs.com/) Support**: Use Markdown with JSX components for blog posts.
-- **Light and Dark Mode Toggle**: Switch between themes for better readability.
-- **Dynamic [OG Images](https://vercel.com/docs/functions/og-image-generation)**: Auto-generate Open Graph images for sharing.
-- **SEO Optimization**: Enhance search visibility with sitemap, robots.txt, and JSON-LD schema.
-- **Dynamic Feed Generation**: Automatic dynamic [RSS](https://nextfolio-template.vercel.app/rss.xml), [Atom](https://nextfolio-template.vercel.app/atom.xml), and [JSON](https://nextfolio-template.vercel.app/feed.json) feeds.
-- **[KaTeX](https://katex.org/) Integration**: Render mathematical expressions smoothly.
-- **Performance Tracking**: Monitor web performance with [Vercel Web Analytics](https://vercel.com/docs/speed-insights) and [Speed Insights](https://vercel.com/docs/speed-insights).
-- **Interactive Embeds**: Easily embed interactive tweets and YouTube videos.
-- **Captions**: Add descriptive captions to photos, tweets, and videos.
-- **Image Grid**: Easily showcase image galleries or photos.
+- **Responsive Design**: The portfolio is fully responsive, ensuring it looks great on all devices, from desktops to mobile phones.
+- **Dark/Light Mode**: Users can switch between dark and light modes for a comfortable viewing experience.
+- **Performance Optimized**: The site is optimized for fast loading times and smooth performance.
 
 ## Installation
 
-Nextfolio uses [pnpm](https://pnpm.io/installation) for dependency management, so ensure it is installed on your system.
+This Portfolio uses [pnpm](https://pnpm.io/installation) for dependency management, so ensure it is installed on your system.
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [pnpm](https://pnpm.io/installation) to bootstrap the example:
+Execute [create-next-app](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [pnpm](https://pnpm.io/installation) to bootstrap the example:
 
-```
-pnpm create next-app --example https://github.com/1msirius/Nextfolio my-portfolio
+```sh
+pnpm create next-app --example https://github.com/JAILBREAK-101/genixtechportolio my-portfolio
 ```
 
 Start the development server:
 
-```
+```sh
 pnpm dev
 ```
 
@@ -45,34 +30,62 @@ The server will be running at [http://localhost:3000](http://localhost:3000).
 
 ## Configuration
 
-1. Update the site metadata and social links in `app/config.ts` to set up SEO, feeds, social links, and Open Graph settings.
-2. Update your routes in `app/sitemap.ts` for SEO optimization.
-3. Update your blog posts in the `/content` folder.
+### Config.ts
 
-For more information about configuration, follow the instructions in the [Getting Started](https://nextfolio-template.vercel.app/blog/getting-started#configuration) post.
+Update the site metadata and social links in the `app/config.ts` file. These constants are utilized across the site for SEO, feeds, social links, and Open Graph integration.
 
-## Contributing
+```ts
+export const metaData = {
+    baseUrl: "https://genixtech-portfolio.vercel.app", // Update with your site base URL
+    title: "GenixTech Portfolio", // Update with your site title
+    name: "Your Name", // Update with your name
+    ogImage: "/opengraph-image.png", // Update with your Open Graph image
+    description:
+        "A clean, fast, and lightweight portfolio template built with Next.js, Vercel, and Tailwind CSS for optimal performance.", // Update with your site description
+};
 
-Contributions are welcome! To get involved, just push your code to the repo. Whether you're enhancing existing features or adding new ones, your efforts are greatly appreciated!
+export const socialLinks = {
+    twitter: "https://twitter.com/yourprofile", // Update with your Twitter URL
+    github: "https://github.com/JAILBREAK-101", // Update with your GitHub URL
+    instagram: "https://www.instagram.com/yourprofile", // Update with your Instagram URL
+};
+```
 
-## Licence
+### Sitemap
 
-Nextfolio is open-source and released under the MIT License.
+Adjust the routes to match your portfolio’s navigation in the `app/sitemap.ts` file for SEO optimization:
 
+```ts
+let routes = ["", "solutions", "updates"].map((route) => ({
+    url: `${BaseUrl}${route}`,
+    lastModified: new Date().toISOString().split("T")[0],
+}));
+```
 
-Recommendations
-Add Social Proof:
+### Profile Photo
 
-Add client logos or testimonials
-Include specific metrics/results
-Show industry recognition
-Clearer Value Timeline:
+Update your profile photo by replacing the `public/profile.png` file with your image.
 
-How quickly can users see results?
-What's the implementation process?
-What support do you provide?
-Call-to-Action Enhancement:
+### Favicon
 
-Make the "Book a Free Strategy Call" button more prominent
-Add specific benefits of the strategy call
-Include expected timeframe for the call
+Update your favicon by replacing the `public/favicon.ico` file with your custom icon.
+
+### Analytics
+
+GenixTech Portfolio uses Vercel Web Analytics and Speed Insights to monitor user interactions and website's performance. Simply deploy your site on Vercel and enable both features through the Vercel dashboard.
+
+## Ready!
+
+You're all set! Update your blog posts in the `/content` folder, add your project data in `app/project/projectdata.tsx`, and update your images in `app/photos/page.tsx`.
+
+Your portfolio is equipped with SEO, RSS, Atom, and JSON feeds, as well as analytics. GenixTech Portfolio is fully customizable, allowing you to add features as needed.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+## Contact
+
+For any inquiries, please contact me through the contact form on my portfolio website.
+
+This README provides a comprehensive overview of your GenixTech Portfolio website, including installation instructions, configuration details, and feature highlights.
