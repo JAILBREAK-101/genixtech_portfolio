@@ -65,15 +65,53 @@ export default function SolutionsPage() {
     <main className="min-h-screen py-20 bg-gradient-to-b from-slate-950 to-slate-900">
       <Container>
         <div className="max-w-4xl mx-auto space-y-16">
-          {/* Honest Introduction */}
           <section className="text-center space-y-6">
             <h1 className="text-4xl font-bold bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
-              Current Projects & Learning Journey
+              Current Solutions & Learning Journey
             </h1>
             <p className="text-lg text-violet-200">
               I'm actively learning and building. Here's my honest progress 
               and what I'm working towards.
             </p>
+          </section>
+
+          {/* Current Projects */}
+          <section className="space-y-8">
+            <h2 className="text-2xl font-semibold text-violet-300">
+              Current Solutions
+            </h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              {projects.map((project) => (
+                <div 
+                  key={project.name}
+                  className="p-6 bg-slate-900/50 rounded-lg border border-violet-500/20"
+                >
+                  <h3 className="text-xl font-medium text-violet-400 mb-2">
+                    {project.name}
+                  </h3>
+                  <p className="text-gray-300 mb-4">
+                    {project.description}
+                  </p>
+                  <ul className="space-y-2 mb-4">
+                    {project.features.map((feature) => (
+                      <li key={feature} className="text-gray-400 flex items-center">
+                        <span className="text-violet-400 mr-2">▹</span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  {project.github && (
+                    <Link 
+                      href={project.github}
+                      className="text-sm text-violet-400 hover:text-violet-300"
+                      target="_blank"
+                    >
+                      View on GitHub →
+                    </Link>
+                  )}
+                </div>
+              ))}
+            </div>
           </section>
 
           {/* Learning Tracks */}
@@ -123,45 +161,6 @@ export default function SolutionsPage() {
                       </span>
                     ))}
                   </div>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Current Projects */}
-          <section className="space-y-8">
-            <h2 className="text-2xl font-semibold text-violet-300">
-              Current Projects
-            </h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              {projects.map((project) => (
-                <div 
-                  key={project.name}
-                  className="p-6 bg-slate-900/50 rounded-lg border border-violet-500/20"
-                >
-                  <h3 className="text-xl font-medium text-violet-400 mb-2">
-                    {project.name}
-                  </h3>
-                  <p className="text-gray-300 mb-4">
-                    {project.description}
-                  </p>
-                  <ul className="space-y-2 mb-4">
-                    {project.features.map((feature) => (
-                      <li key={feature} className="text-gray-400 flex items-center">
-                        <span className="text-violet-400 mr-2">▹</span>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  {project.github && (
-                    <Link 
-                      href={project.github}
-                      className="text-sm text-violet-400 hover:text-violet-300"
-                      target="_blank"
-                    >
-                      View on GitHub →
-                    </Link>
-                  )}
                 </div>
               ))}
             </div>
