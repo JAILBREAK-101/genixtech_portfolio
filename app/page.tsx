@@ -28,18 +28,18 @@ export default function Page() {
             </h1>
             <p className="text-base md:text-lg text-violet-200 max-w-2xl mx-auto lg:mx-0">
               I'm a developer focused on creating custom web applications 
-              with AI integrations. Currently building and learning.
+              with AI integrations.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button variant="default" className="w-full sm:w-auto">
-                <Link href="/solutions">View My Work</Link>
+                <Link href="/solutions">View Solutions</Link>
               </Button>
               <Button 
                 variant="cta"
                 onClick={() => setIsModalOpen(true)}
                 className="w-full sm:w-auto"
               >
-                Let's Talk
+                Discuss your project {/* View my work */}
               </Button>
             </div>
           </div>
@@ -69,7 +69,7 @@ export default function Page() {
             <div className="grid sm:grid-cols-2 gap-6 md:gap-8 mt-8 md:mt-12">
               {/* Service cards with improved mobile layout */}
               <div className="p-4 md:p-6 bg-slate-900/50 backdrop-blur-sm rounded-lg border border-violet-500/20">
-                <h3 className="text-xl font-medium text-violet-400 mb-4">What I Can Help With</h3>
+                <h3 className="text-xl font-medium text-violet-400 mb-4">How I provide value</h3>
                 <ul className="text-gray-300 space-y-2 text-left">
                   <li>• Custom web application development</li>
                   <li>• Integration of AI APIs (OpenAI, HuggingFace)</li>
@@ -79,7 +79,7 @@ export default function Page() {
               <div className="p-6 bg-slate-900/50 backdrop-blur-sm rounded-lg border border-violet-500/20">
                 <h3 className="text-xl font-medium text-violet-400 mb-4">Current Focus</h3>
                 <ul className="text-gray-300 space-y-2 text-left">
-                  <li>• Building my first AI-integrated projects</li>
+                  <li>• Building AI-integrated projects</li>
                   <li>• Learning and implementing best practices</li>
                   <li>• Open to collaboration opportunities</li>
                 </ul>
@@ -93,7 +93,7 @@ export default function Page() {
       <section className="py-12 md:py-16">
         <Container className="px-4">
           <h2 className="text-2xl md:text-3xl font-semibold text-center mb-8 md:mb-12 text-violet-300">
-            My Solutions
+            Live Solutions
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {solutions.map((solution) => (
@@ -201,7 +201,7 @@ export default function Page() {
                           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
-                          Coming Soon
+                          Beta Testing
                         </span>
                         <Link
                           href={solution.waitlistUrl}
@@ -342,7 +342,7 @@ export default function Page() {
 
               {/* Subtitle with better spacing */}
               <p className="text-lg md:text-xl text-violet-200/90 max-w-2xl mx-auto leading-relaxed">
-                I'm currently available for small to medium web development projects.
+                I'm available for small to medium web development projects.
                 While I'm growing my AI integration skills, I can help with:
               </p>
 
