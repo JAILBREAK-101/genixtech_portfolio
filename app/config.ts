@@ -11,5 +11,5 @@ export const socialLinks = {
   linkedin: "https://www.linkedin.com/in/jailbreak",
   github: "https://github.com/JAILBREAK-101/genixtech",
   email: "mailto:oluwagbemiga.awosope123@gmail.com",
-  wabusiness: "+234 9128800356",
+  wabusiness: "+234 9054423421",
 };

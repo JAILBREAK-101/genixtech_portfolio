@@ -59,12 +59,12 @@ const updates = [
     ]
   },
   {
-    category: "Ongoing Plans",
+    category: "Ongoing Projects",
     items: [
       {
         title: "Subtilo",
         date: "Q3 2025",
-        type: "ongoing",
+        type: "in-development",
         description: "AI-powered video subtitles application",
         tags: ["Next.js", "Python(Flask)", "TensorFlow"]
       }

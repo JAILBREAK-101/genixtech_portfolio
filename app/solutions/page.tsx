@@ -11,21 +11,21 @@ const learningTracks = [
     status: "active",
     skills: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
     currentProject: "Building this portfolio site",
-    progress: 75
+    progress: 80
   },
   {
     area: "AI Integration",
     status: "learning",
     skills: ["TensorFlow", "HF Transformers"],
     currentProject: "Working on Subtilo",
-    progress: 15
+    progress: 20
   },
   {
     area: "Backend Development",
     status: "active",
     skills: ["Node.js", "Express.js", "Python", "Flask", "MongoDB", "PostgreSQL", "Prisma"],
     currentProject: "Building ResumeGPT",
-    progress: 50
+    progress: 55
   }
 ];
 

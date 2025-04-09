@@ -195,22 +195,22 @@ export default function Page() {
                       View Code
                     </Link>
                   ) : (
-                    solution.comingSoon && solution.waitlistUrl && (
+                    solution.comingSoon && (
                       <div className='flex gap-5 mt-4'>
                         <span className="text-sm text-gray-400 flex items-center gap-1">
                           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
-                          Beta Testing
+                          Coming Soon
                         </span>
-                        <Link
+                        {/* <Link
                           href={solution.waitlistUrl}
                           className='text-sm text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-1'
                           target="_blank"
                         >
                           <Calendar />
                           Join the Waitlist
-                        </Link>
+                        </Link> */}
                       </div>
                     )
                   )}
@@ -462,6 +462,6 @@ const solutions = [
     ],
     progress: 15,
     comingSoon: true,
-    waitlistUrl: "https://subtiloai.vercel.app"
+    // waitlistUrl: "https://subtiloai.vercel.app"
   }
 ];
